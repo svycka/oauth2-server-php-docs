@@ -587,7 +587,7 @@ class OAuthClientRepository extends EntityRepository implements ClientCredential
 {
     public function getClientDetails($clientIdentifier)
     {
-        $client = $client = $this->findOneBy(['client_identifier' => $clientIdentifier]);
+        $client = $this->findOneBy(['client_identifier' => $clientIdentifier]);
         if ($client) {
             $client = $client->toArray();
         }
@@ -596,7 +596,7 @@ class OAuthClientRepository extends EntityRepository implements ClientCredential
 
     public function checkClientCredentials($clientIdentifier, $clientSecret = NULL)
     {
-        $client = $client = $this->findOneBy(['client_identifier' => $clientIdentifier]);
+        $client = $this->findOneBy(['client_identifier' => $clientIdentifier]);
         if ($client) {
             return $client->verifyClientSecret($clientSecret);
         }
@@ -1478,3 +1478,4 @@ You've done it!!!
 Few more things to consider:
 
 - Although I have included the OAuthUser entity and the user credentials grant is working, access tokens are not yet linked with users, you will have to implement this relationship based on your app.
+
